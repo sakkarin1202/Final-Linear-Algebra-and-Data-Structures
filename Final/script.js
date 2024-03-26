@@ -91,10 +91,10 @@ function readAndShowImages(
   readerStudent.readAsDataURL(studentImage);
 }
 
-// กำหนดการเรียกใช้ฟังก์ชัน checkMatch() เมื่อกดปุ่มในฟอร์มผู้ประกอบการ
-const entrepreneurButton = document.querySelector(
-  ".add-entrepreneur-form button"
-);
+// // กำหนดการเรียกใช้ฟังก์ชัน checkMatch() เมื่อกดปุ่มในฟอร์มผู้ประกอบการ
+// const entrepreneurButton = document.querySelector(
+//   ".add-entrepreneur-form button"
+// );
 entrepreneurButton.addEventListener("click", function () {
   checkMatch("entrepreneur");
 });
@@ -122,60 +122,42 @@ document
     reader.readAsDataURL(event.target.files[0]);
   });
 
-function showAlertWithImage(
-  studentName,
-  entrepreneurName,
-  studentImage,
-  entrepreneurImage
-) {
-  const alertContent = document.createElement("div");
-  alertContent.innerHTML = `
-    <p>${studentName} has a matching skill with ${entrepreneurName}.</p>
-    <div>
-      <img src="${studentImage}" width="100" alt="${studentName}" style="margin-right: 10px;">
-      <img src="${entrepreneurImage}" width="100" alt="${entrepreneurName}">
-    </div>
-  `;
-  alertContent.style.textAlign = "center"; // จัดให้อยู่ตรงกลาง
-  alert(alertContent);
-}
-document.addEventListener("DOMContentLoaded", function () {
-  // Get the modal
-  var modal = document.getElementById("myModal");
-
-  // Get the button that opens the modal
-  var btn = document.getElementById("myBtn");
-
-  // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on the button, open the modal
-  btn.onclick = function () {
-    modal.style.display = "block";
-    var studentImg = document.getElementById("studentImage").files[0];
-    var entrepreneurImg = document.getElementById("entrepreneurImage").files[0];
-    var readerStudent = new FileReader();
-    readerStudent.onload = function () {
-      document.getElementById("studentImg").src = readerStudent.result;
-    };
-    readerStudent.readAsDataURL(studentImg);
-    var readerEntrepreneur = new FileReader();
-    readerEntrepreneur.onload = function () {
-      document.getElementById("entrepreneurImg").src =
-        readerEntrepreneur.result;
-    };
-    readerEntrepreneur.readAsDataURL(entrepreneurImg);
-  };
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function (event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-});
+  function showAlertWithImage(studentName, entrepreneurName, studentImage, entrepreneurImage) {
+    const modalContent = document.createElement('div');
+    modalContent.innerHTML = `
+      <p>${studentName} has a matching skill with ${entrepreneurName}.</p>
+      <div>
+        <img src="${studentImage}" width="100" alt="${studentName}" style="margin-right: 10px;">
+        <img src="${entrepreneurImage}" width="100" alt="${entrepreneurName}">
+      </div>
+    `;
+    modalContent.style.textAlign = 'center';
+  
+    // สร้าง Modal
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `<div class="modal-content">${modalContent.outerHTML}</div>`;
+    document.body.appendChild(modal);
+  
+    // เพิ่ม event listener เพื่อปิด Modal เมื่อคลิกที่พื้นหลังหรือปุ่มปิด
+    modal.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  
+    // เพิ่มปุ่มปิด Modal
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close');
+    closeButton.innerHTML = '&times;';
+    modal.querySelector('.modal-content').appendChild(closeButton);
+  
+    // เพิ่ม event listener เพื่อปิด Modal เมื่อคลิกที่ปุ่มปิด
+    closeButton.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  
+    // แสดง Modal
+    modal.style.display = 'block';
+  }
+  
