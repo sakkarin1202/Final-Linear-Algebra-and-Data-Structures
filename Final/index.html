@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Document</title>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="container">
+      <nav>
+        <div class="logo">
+            <img src="logo.jpg" width="100px">
+          <a href="index.html"> TIGLINE HEAR </a>
+        </div>
+        <ul class="menu">
+          <a href="">Home</a>
+          <a href="">Skill</a>
+          <a href="">Contact-us</a>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Welcome Page -->
+  <div class="bg">
+    <div class="overlay"></div>
+    <img src="Pic.jpg" alt="" width="50px"/>
+    <div class="container">
+      <div class="welcome">
+        <div class="welcome-box">
+          <div class="content">
+          </div>
+          <div class="content-center">
+            <button>
+              <i class="far fa-calendar-check"></i>
+              book now
+            </button>
+          </div>
+          <div class="content-center">
+            <a href="">
+              Scroll
+              <i class="fas fa-chevron-circle-down"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <div class="add-student-form">
+        <h2>Add Student</h2>
+        <form id="studentForm">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <label for="studentSkill">Skill:</label>
+            <select id="studentSkill" name="studentSkill" required>
+                <option value="" disabled selected>Select a skill</option>
+                <option value="Programming">Programming</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Game Development">Game Development</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="studentImage">Upload Image:</label>
+            <input type="file" id="studentImage" name="studentImage" accept="image/*">
+
+        </form>
+    </div>
+
+    <div class="add-entrepreneur-form">
+        <h2>Add Entrepreneur</h2>
+        <form id="entrepreneurForm">
+            <label for="entrepreneurName">Entrepreneur Name:</label>
+            <input type="text" id="entrepreneurName" name="entrepreneurName" required>
+
+            <label for="entrepreneurSkill">Skill:</label>
+            <select id="entrepreneurSkill" name="entrepreneurSkill" required>
+                <option value="" disabled selected>Select a skill</option>
+                <option value="Programming">Programming</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                <option value="Mobile App Development">Mobile App Development</option>
+                <option value="Game Development">Game Development</option>
+                <!-- Add more options as needed -->
+            </select>
+
+            <label for="entrepreneurImage">Upload Image:</label>
+            <input type="file" id="entrepreneurImage" name="entrepreneurImage" accept="image/*">
+
+            <button type="button" onclick="checkMatch()">Check Match</button>
+        </form>
+    </div>
+</div>
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- หน้าเนื้อหาของ Modal -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>This is a matching skill.</p>
+    <div>
+      <img src="" alt="Student Image" id="studentImg" style="margin-right: 10px;">
+      <img src="" alt="Entrepreneur Image" id="entrepreneurImg">
+    </div>
+  </div>
+
+</div>
+
+
+           
+  <footer>
+    <div class="container">
+      <div class="footer-box">
+        <div class="footer-items">
+          <div class="footer-logo">
+            <h3>LUXURY</h3>
+            <p>Skill</p>
+          </div>
+          <span>Se Npru</span>
+          <span>654259020</span>
+          <span>xfake12340@hotmail.com</span>
+        </div>
+        <div class="footer-items">
+          <ul>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <a href="">Terms & Conditions</a>
+          </ul>
+        </div>
+        <div class="footer-items">
+          <ul>
+            <a href=""><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href=""><i class="fab fa-twitter"></i> Twitter</a>
+            <a href=""><i class="fab fa-instagram"></i> Instagram</a>
+          </ul>
+        </div>
+        <div class="footer-items">
+          <ul>
+            <span>Subscribe to our newsletter</span>
+            <form action="">
+              <input type="email" name="" placeholder="Email Address" id="" />
+              <button>OK</button>
+            </form>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

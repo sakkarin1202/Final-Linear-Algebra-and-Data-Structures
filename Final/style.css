@@ -1,0 +1,392 @@
+@import "global.css";
+/* Navbar */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  background-color: var(--pr-color);
+  width: 256px;
+  height: fit-content;
+  font-size: 40px;
+  padding: 30px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.logo a {
+  color: var(--sn-color);
+}
+.logo p {
+  font-size: 15px;
+}
+.menu {
+  display: flex;
+}
+.menu a {
+    font-size: 20px;
+    margin-left: 50px;
+    color: var(--sn-color);
+    position: relative;
+    font-family: arial;
+    color: rgb(255, 255, 255);
+    letter-spacing: 2px;
+    border: solid rgb(31, 52, 238);
+    background: rgb(0, 0, 0);
+    border-radius: 15px;
+}
+.menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 105%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  transition: 0.4s;
+}
+.menu a:hover::after {
+  opacity: 1;
+  bottom: -5
+  }
+.menu a:hover::after {
+  opacity: 1;
+  bottom: -5px;
+}
+
+/* Welcome Page */
+
+.bg {
+  position: relative;
+  height: 70vh;
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: cover;
+}
+.container {
+  height: 100%;
+  width: 100%;
+}
+.welcome {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-items: center;
+}
+.welcome-box {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+.welcome-box .content {
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 40px;
+}
+.welcome-box .content span {
+  font-size: 30px;
+  font-family: arial;
+  letter-spacing: 4px;
+}
+.welcome-box .content-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.welcome-box .content-center button {
+  background-color: var(--pr-color);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 7px;
+  font-family: arial;
+  font-weight: 600;
+  display: flex;
+  cursor: pointer;
+}
+.welcome-box .content-center button i {
+  margin-right: 10px;
+}
+.welcome-box .content-center a {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-family: arial;
+}
+.welcome-box .content-center a i {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  background-color: var(--sn-color);
+  color: #fff;
+  padding: 5% 0;
+}
+footer span {
+  font-family: arial;
+}
+footer a {
+  color: #fff;
+  font-family: arial;
+}
+.footer-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+.footer-box .footer-items,
+.footer-box .footer-items ul {
+  display: flex;
+  flex-direction: column;
+}
+.footer-box .footer-items .footer-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.footer-box .footer-items .footer-logo h3 {
+  font-size: 25px;
+  letter-spacing: 1.2px;
+}
+.footer-box .footer-items:nth-child(1) {
+  align-items: flex-start;
+}
+.footer-box .footer-items:nth-child(1) span {
+  font-size: 14px;
+}
+.footer-box .footer-items ul a {
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.footer-box .footer-items ul a i {
+  margin-right: 30%;
+}
+.footer-box .footer-items {
+  align-items: center;
+}
+.footer-box .footer-items form {
+  display: flex;
+  width: 100%;
+  margin-top: 15px;
+}
+.footer-box .footer-items form input[type="email"] {
+  width: 250px;
+  height: 40px;
+  border: solid 2px var(--pr-color);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background: none;
+  color: #fff;
+  font-size: 16px;
+  font-family: arial;
+  padding: 3px 10px;
+  outline: none;
+}
+.footer-box .footer-items form input[type="email"]::placeholder {
+  color: #fff;
+}
+.footer-box .footer-items form button {
+  width: 20%;
+  background-color: var(--pr-color);
+  color: var(--sn-color);
+  border: none;
+  font-family: arial;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.cart-icon {
+  position: fixed;
+  top: 20px; /* ปรับตำแหน่งตามต้องการ */
+  right: 20px; /* ปรับตำแหน่งตามต้องการ */
+  z-index: 9999; /* ตั้งค่า z-index เพื่อให้ไอคอนอยู่ด้านหน้า */
+}
+.cart-icon a {
+  text-decoration: none;
+  color: #000; /* สีของไอคอน */
+}
+
+.cart-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+.cart-overlay h3 {
+  text-align: center;
+  font-size: 25px;
+  background-color: white;
+  padding-top: 15px;
+}
+.cart-dialog {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+#closeCart {
+  position: absolute;
+  bottom: 10px; /* ตำแหน่งด้านล่าง */
+  left: 50%; /* ตำแหน่งกึ่งกลางแนวนอน */
+  transform: translateX(-50%); /* ย้ายปุ่มปิดไปทางซ้าย 50% ของตำแหน่งของตนเอง */
+  border: none;
+  background: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.cart-item {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0; /* ปรับระยะห่างของรายการสินค้า */
+  display: flex;
+  align-items: center;
+  margin-top: 5px; /* ลดระยะห่างด้านบนของรายการสินค้า */
+}
+.cart-item .title {
+  flex: 1;
+  font-size: 30px;
+  color: white;
+  background-color: rgb(0, 0,1)
+ }
+.cart-item .price {
+  margin-right: 15px;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.cart-item:last-child {
+  border-bottom: none; /* ไม่มีเส้นขอบสำหรับรายการสุดท้าย */
+}
+
+.cart-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-container.show {
+  display: block;
+}
+.add-student-form{
+    margin-bottom: 20px;
+}
+.add-entrepreneur-form{
+    margin-bottom: 20px;
+}
+form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 8px;
+        color: #666;
+    }
+
+    input[type="text"],
+    select {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+.modal {
+  display: none; /* ซ่อน Modal เริ่มต้น */
+  position: fixed; /* ตั้ง Modal ให้อยู่ในตำแหน่งแน่นอน */
+  z-index: 1; /* ตั้งค่าความสูงให้ Modal เพื่อให้มันปกปิดหน้าจอ */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* เพิ่มการสไลด์ */
+  background-color: rgba(0,0,0,0.4); /* พื้นหลังสีเทา */
+}
+
+/* เนื้อหา Modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* ตำแหน่งในการจัดศูนย์ */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* ขนาดของเนื้อหา */
+}
+
+/* ปุ่มปิด Modal */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
